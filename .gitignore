@@ -1,0 +1,12 @@
+# Cargo build artifacts
+target/
+
+# Local clone of upstream axum (kept around as a reference; not part of this repo)
+axum/
+
+# macOS
+.DS_Store
+
+# Editor working dirs (uncomment if you use them and want them ignored)
+# .vscode/
+# .idea/

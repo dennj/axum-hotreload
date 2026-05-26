@@ -1,0 +1,26 @@
+[package]
+name = "example"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "example"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.8"
+axum-hotreload = "0.1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+anyhow = "1"
+
+# When developing inside this repo, use the local source of axum-hotreload
+# instead of fetching the published version. Users copying this Cargo.toml
+# into their own project should DELETE this section.
+[patch.crates-io]
+axum-hotreload = { path = ".." }
